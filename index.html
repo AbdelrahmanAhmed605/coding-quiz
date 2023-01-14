@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript Coding Quiz</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <main>
+        <section id="intro">
+        <div class= "intro-title">Coding Quiz Challenge</div>
+        <p>Try to answer the following code-related questions within the time limit.
+            <br>
+            Keep in mind that incorrect answers will penalize your score/time
+            <br>
+            by 10 seconds
+        </p>
+        <button class="start-button">Start Quiz</button>
+        </section>
+
+        <section id="quiz">
+            <div class="menu-items">
+                <a id="view-scores" href="#high-scores">View high scores</a>
+                <div id="time-display">
+                    Time: <span id="time"></span>
+                </div>
+            </div>
+            <div class="quiz-content">
+                <span class="quiz-question"></span>
+                <ol class="quiz-options">
+                    <li class="option-one"></li>
+                    <li class="option-two"></li>
+                    <li class="option-three"></li>
+                    <li class="option-four"></li>
+                </ol>
+            </div>
+            <div>
+                <hr>
+                <span id="answer-status"></span>
+            </div>
+        </section>
+
+        <section id="quiz-results">
+            <div>
+                All done!
+                <br>
+                Your final score is: <span id="final-result"></span>
+            </div>
+            <form>
+                <label for="user-initials">Enter Initials:</label>
+                <input type="text" id="user-initials" name="user-initials">
+                <input type="submit">
+            </form>
+        </section>
+
+        <section id="high-scores">
+            <div>
+                High Scores
+                <ol id="scores-list">
+                </ol>
+                <button type="button" id="back-home">Go back</button>
+                <button type="button" id="clear-scores">Clear high scores</button>
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
