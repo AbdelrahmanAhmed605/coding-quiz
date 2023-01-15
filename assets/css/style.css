@@ -10,6 +10,7 @@
     --answer-status-text: #7b7676;
 
     --section-title: 1.8em;
+    --section-title-weight: bolder;
     --quiz-questions: 1.5em;
     --quiz-options-padding: 0.3em 6em 0.3em 0.3em;
     --btn-padding: 0.2em;
@@ -52,7 +53,7 @@ main{
 
 .intro-title{
     font-size: var(--section-title);
-    font-weight: bolder;
+    font-weight: var(--section-title-weight);
     text-align: center;
 }
 
@@ -112,7 +113,7 @@ main{
 #result-title{
     display: inline-block;
     font-size: var(--section-title);
-    font-weight: bolder;
+    font-weight: var(--section-title-weight);
     margin-bottom: 0.3em;
 }
 
@@ -128,7 +129,7 @@ main{
 
 #leaderboard-title{
     font-size: var(--section-title);
-    font-weight: bolder;
+    font-weight: var(--section-title-weight);
 }
 
 #scores-list{
