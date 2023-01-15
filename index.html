@@ -9,24 +9,23 @@
 
   <body>
     <main>
+        <div class="menu-items">
+            <a id="view-scores" href="#high-scores">View high scores</a>
+            <div id="time-display">
+                Time: <span id="time"></span>
+            </div>
+        </div>
+
         <section id="intro">
-        <div class= "intro-title">Coding Quiz Challenge</div>
-        <p>Try to answer the following code-related questions within the time limit.
-            <br>
-            Keep in mind that incorrect answers will penalize your score/time
-            <br>
-            by 10 seconds
-        </p>
-        <button class="start-button">Start Quiz</button>
+            <div class= "intro-title">Coding Quiz Challenge</div>
+            <p>Try to answer the following code-related questions within the time limit.
+                Keep in mind that incorrect answers will penalize your score/time
+                by 10 seconds
+            </p>
+            <button id="start-button">Start Quiz</button>
         </section>
 
         <section id="quiz">
-            <div class="menu-items">
-                <a id="view-scores" href="#high-scores">View high scores</a>
-                <div id="time-display">
-                    Time: <span id="time"></span>
-                </div>
-            </div>
             <div class="quiz-content">
                 <span class="quiz-question"></span>
                 <ol class="quiz-options">
@@ -35,29 +34,27 @@
                     <li class="option-three"></li>
                     <li class="option-four"></li>
                 </ol>
-            </div>
-            <div>
                 <hr>
                 <span id="answer-status"></span>
             </div>
         </section>
 
         <section id="quiz-results">
-            <div>
-                All done!
+            <div class="result-message">
+                <span id="result-title">All done!</span>
                 <br>
                 Your final score is: <span id="final-result"></span>
             </div>
             <form>
                 <label for="user-initials">Enter Initials:</label>
-                <input type="text" id="user-initials" name="user-initials">
-                <input type="submit">
+                <input type="text" id="user-initials" name="user-initials" required>
+                <input type="submit" id="results-submit">
             </form>
         </section>
 
         <section id="high-scores">
             <div>
-                High Scores
+                <span id="leaderboard-title">High Scores</span>
                 <ol id="scores-list">
                 </ol>
                 <button type="button" id="back-home">Go back</button>
