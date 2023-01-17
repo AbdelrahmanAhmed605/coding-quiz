@@ -87,14 +87,14 @@ main{
     margin-bottom: 0.5em;
 }
 
-.quiz-options{
+#quiz-options{
     width: fit-content;
     color: var(--quiz-options-text);
     list-style-position: inside;
     margin-bottom: 1em;
 }
 
-.quiz-options li{
+#quiz-options li{
     margin: 0.5em 0;
     padding: var(--quiz-options-padding);
     background-color: var(--quiz-options-color);
@@ -148,10 +148,9 @@ main{
     padding: var(--btn-padding);
 }
 
-
-/* #intro,#quiz,#high-scores{
+#quiz,#quiz-results,#high-scores{
     display: none
-} */
+}
 
 
 

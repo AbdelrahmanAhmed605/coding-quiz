@@ -10,7 +10,7 @@
   <body>
     <main>
         <div class="menu-items">
-            <a id="view-scores" href="#high-scores">View high scores</a>
+            <span id="view-scores" onclick="showHighScores()">View high scores</span>
             <div id="time-display">
                 Time: <span id="time"></span>
             </div>
@@ -22,17 +22,17 @@
                 Keep in mind that incorrect answers will penalize your score/time
                 by 10 seconds
             </p>
-            <button id="start-button">Start Quiz</button>
+            <button id="start-button" onclick="startQuiz()">Start Quiz</button>
         </section>
 
         <section id="quiz">
             <div class="quiz-content">
-                <span class="quiz-question"></span>
-                <ol class="quiz-options">
-                    <li class="option-one"></li>
-                    <li class="option-two"></li>
-                    <li class="option-three"></li>
-                    <li class="option-four"></li>
+                <span id="quiz-question"></span>
+                <ol id="quiz-options">
+                    <li id="quiz-option-1" class="quiz-option-li"></li>
+                    <li id="quiz-option-2" class="quiz-option-li"></li>
+                    <li id="quiz-option-3" class="quiz-option-li"></li>
+                    <li id="quiz-option-4" class="quiz-option-li"></button></li>
                 </ol>
                 <hr>
                 <span id="answer-status"></span>
@@ -43,12 +43,12 @@
             <div class="result-message">
                 <span id="result-title">All done!</span>
                 <br>
-                Your final score is: <span id="final-result"></span>
+                Your final score is: <span id="final-result"></span> out of 100
             </div>
             <form>
                 <label for="user-initials">Enter Initials:</label>
                 <input type="text" id="user-initials" name="user-initials" required>
-                <input type="submit" id="results-submit">
+                <input type="submit" id="results-submit" >
             </form>
         </section>
 
@@ -57,8 +57,8 @@
                 <span id="leaderboard-title">High Scores</span>
                 <ol id="scores-list">
                 </ol>
-                <button type="button" id="back-home">Go back</button>
-                <button type="button" id="clear-scores">Clear high scores</button>
+                <button type="button" id="back-home" onclick="goBack()">Go back</button>
+                <button type="button" id="clear-scores" onclick="clearScores()">Clear high scores</button>
             </div>
         </section>
     </main>
