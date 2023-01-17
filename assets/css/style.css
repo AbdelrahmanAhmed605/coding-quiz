@@ -1,18 +1,28 @@
 :root{
-    --bg-color: #ddd4c5;
-    --view-scores-text: #c723ae;
-    --start-btn: #9049a6;
-    --btn-txt-color: #e6e3e3;
-    --btn-bg-color: #3710a3;
-    --scores-list-bg: #b78cb1;
-    --quiz-options-color:#131386;
+    --bg-color: #fff7f3;
+    --start-btn: #7a25ca;
+    --start-btn-hover: #9563ab;
+    --view-scores-text: #7823c7;
+    --quiz-options-color:#39145b;
+    --quiz-options-hover: #2547b7;
     --quiz-options-text:#cecccc;
     --answer-status-text: #7b7676;
+    --btn-txt-color: #e6e3e3;
+    --btn-bg-color: #2b319c;
+    --scores-list-bg:  #2b319c;
+    --scores-list-txt: #e6e3e3;
 
-    --section-title: 1.8em;
+    --section-title: 2.5em;
     --section-title-weight: bolder;
-    --quiz-questions: 1.5em;
-    --quiz-options-padding: 0.3em 6em 0.3em 0.3em;
+    --menu-items: 1.25em;
+    --intro-text: 1.5em;
+    --btn-size: 1.25em;
+    --quiz-questions: 2em;
+    --quiz-text: 1.25em;
+    --results-text: 1.25em;
+    --scores-text: 1.5em;
+
+    --quiz-options-padding: 0.5em 6em 0.5em 0.3em;
     --btn-padding: 0.2em;
 }
 
@@ -33,16 +43,25 @@ main{
 }
 
 .menu-items{
+    font-size: var(--menu-items);
     width: 100%;
+
     display: flex;
     justify-content: space-between;
-    padding: 0.5em 1.5em 0.5em 0.5em;
+
+    padding: 1em 1.25em;
     margin-bottom: 3em;
 }
 
 #view-scores{
     text-decoration: none;
     color: var(--view-scores-text);
+}
+
+#view-scores:hover{
+    cursor: pointer;
+    transform: scale(1.25);
+    transition: 0.5s ease-in-out;
 }
 
 #intro{
@@ -57,16 +76,33 @@ main{
     text-align: center;
 }
 
+#intro-text{
+    display: flex;
+    justify-content: center;
+}
+
 #intro p{
+    font-size: var(--intro-text);
     text-align: center;
+
+    width: 50%;
     margin: 0.5em;
 }
 
 #start-button{
-    padding: 5px;
-    background-color: var(--start-btn);
+    display: block;
+    font-size: var(--intro-text);
+
     color: var(--btn-txt-color);
+    background-color: var(--start-btn);
+
+    padding: 5px;
     margin: 0.5em;
+}
+
+#start-button:hover{
+    background-color: var(--start-btn-hover);
+    cursor: pointer;
 }
 
 #quiz{
@@ -77,49 +113,73 @@ main{
 .quiz-content{
     display: flex;
     flex-direction: column;
+
     width: 70%;
     margin: 1em auto;
 }
 
-.quiz-question{
+#quiz-question{
     font-size: var(--quiz-questions);
     font-weight: bolder;
+
     margin-bottom: 0.5em;
 }
 
 #quiz-options{
-    width: fit-content;
     color: var(--quiz-options-text);
     list-style-position: inside;
+
+    width: 100%;
     margin-bottom: 1em;
 }
 
 #quiz-options li{
-    margin: 0.5em 0;
-    padding: var(--quiz-options-padding);
+    font-size: var(--quiz-text);
     background-color: var(--quiz-options-color);
     border-radius: 0.5em;
+
+    padding: var(--quiz-options-padding);
+    margin: 1em 0;
+}
+
+#quiz-options li:hover{
+    background-color: var(--quiz-options-hover);
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
 }
 
 #answer-status{
+    font-size: var(--quiz-text);
     color: var(--answer-status-text);
-    font-size: 1.5em;
-}
-
-.result-message{
-    margin-bottom: 0.5em;
 }
 
 #result-title{
     display: inline-block;
+
     font-size: var(--section-title);
     font-weight: var(--section-title-weight);
+
     margin-bottom: 0.3em;
+}
+
+.result-message{
+    font-size: var(--results-text);
+    margin-bottom: 0.5em;
+}
+
+#quiz-results form label{
+    font-size: var(--results-text);
+}
+
+#quiz-results form input{
+    font-size: var(--results-text);
+    height: 1.5em;
 }
 
 #results-submit{
     background-color: var(--btn-bg-color);
     color: var(--btn-txt-color);
+
     padding: var(--btn-padding);
 }
 
@@ -137,15 +197,29 @@ main{
 }
 
 #scores-list li{
-    list-style-position: inside;
+    font-size: var(--scores-text);
+
     background-color: var(--scores-list-bg);
+    color: var(--scores-list-txt);
+    list-style-position: inside;
+
     padding: 0.2em;
+    margin-bottom: 0.5em;
+    border-radius: 1em;
 }
 
 #high-scores button{
+    font-size: var(--btn-size);
+
     background-color: var(--btn-bg-color);
     color: var(--btn-txt-color);
+
     padding: var(--btn-padding);
+    margin: 1em 1em 0 0;
+}
+
+#high-scores button:hover{
+    cursor: pointer;
 }
 
 #quiz,#quiz-results,#high-scores{

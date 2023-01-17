@@ -3,7 +3,7 @@ var quiz_section = document.getElementById("quiz");
 var results_section = document.getElementById("quiz-results");
 var high_score_section = document.getElementById("high-scores");
 
-var totalTime;
+var totalTime = 10;
 var secondsLeft;
 var timer;
 
@@ -114,7 +114,6 @@ var quiz_questions = [
 function startQuiz() {
     intro_section.setAttribute("style", "display:none;");
     
-    totalTime = 100;
     secondsLeft = totalTime;
 
     displayQuiz();
@@ -150,6 +149,12 @@ function displayQuiz() {
     option3.textContent = quiz_questions[question_index].options.c;
     option4.textContent = quiz_questions[question_index].options.d;
 
+    if (secondsLeft <= 0) {
+        secondsLeft = 0;
+        document.getElementById("time").innerHTML = secondsLeft;
+        showResults(secondsLeft);
+    }
+
     var quiz_options_li = document.querySelectorAll(".quiz-option-li");
     quiz_options_li.forEach(option => {
       option.addEventListener("click", checkAnswer);
@@ -178,6 +183,8 @@ function checkAnswer(event) {
         secondsLeft -= 15;
         if (secondsLeft <= 0) {
             secondsLeft = 0;
+            document.getElementById("time").innerHTML = secondsLeft;
+            showResults(secondsLeft);
         }
     }
 
@@ -250,6 +257,7 @@ function showHighScores() {
 }
 
 function goBack() {
+    clearInterval(timer);
     question_index = 0;
     document.getElementById("time").innerHTML = "";
 
