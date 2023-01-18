@@ -229,31 +229,31 @@ function showResults(finalScore) {
 /* Adds the users information from the form into the local storage.
 The local storage is kept track using an array which sorts the users by their score in descending order */
 function addScore(event) {
-  event.preventDefault(); //Prevents page from refreshing when the submit button is clicked
+    event.preventDefault(); //Prevents page from refreshing when the submit button is clicked
 
-  results_section.setAttribute("style", "display:none;");
-  high_score_section.setAttribute("style", "display:block;");
+    results_section.setAttribute("style", "display:none;");
+    high_score_section.setAttribute("style", "display:block;");
 
-  var user_scores = JSON.parse(localStorage.getItem("user_scores"));
-  if (user_scores == null) {
+    var user_scores = JSON.parse(localStorage.getItem("user_scores"));
+    if (user_scores == null) {
     user_scores = [];
-  }
-  var user_name = document.getElementById("user-initials").value;
-  user_scores.push({ name: user_name, score: secondsLeft });
-
-  //sorting order function taken from https://atomizedobjects.com/blog/javascript/how-to-sort-an-array-of-objects-by-property-value-in-javascript/#:~:text=How%20to%20sort%20an%20array%20of%20objects%20by,array%20item%20that%20we%20are%20comparing%20it%20against.
-  var scoreOrder = (value1, value2) => {
-    if (value1.score < value2.score) {
-      return -1;
-    } else if (value1.score > value2.score) {
-      return 1;
-    } else {
-      return 0;
     }
-  };
-  user_scores.sort(scoreOrder);
+    var user_name = document.getElementById("user-initials").value;
+    user_scores.push({ name: user_name, score: secondsLeft });
 
-  localStorage.setItem("user_scores", JSON.stringify(user_scores));
+    //sorting order function taken from https://atomizedobjects.com/blog/javascript/how-to-sort-an-array-of-objects-by-property-value-in-javascript/#:~:text=How%20to%20sort%20an%20array%20of%20objects%20by,array%20item%20that%20we%20are%20comparing%20it%20against.
+    var scoreOrder = (value1, value2) => {
+        if (value1.score < value2.score) {
+            return 1;
+        } else if (value1.score > value2.score) {
+            return -1;
+        } else {
+            return 0;
+        }
+    };
+    user_scores.sort(scoreOrder);
+
+    localStorage.setItem("user_scores", JSON.stringify(user_scores));
 
   showHighScores();
 }
@@ -297,6 +297,4 @@ function clearScores() {
 
     localStorage.removeItem("user_scores");
     user_scores = [];
-    
-    showHighScores();
 }
