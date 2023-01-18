@@ -9,6 +9,7 @@
 
   <body>
     <main>
+        <!--Menu section at top of page showcasing the quiz timer and menu option to view the leaderboard-->
         <div class="menu-items">
             <span id="view-scores" onclick="showHighScores()">View high scores</span>
             <div id="time-display">
@@ -16,6 +17,8 @@
             </div>
         </div>
 
+        <!--Section explaining how the challenge works and displaying a button that begins the quiz when clicked 
+            by the user-->
         <section id="intro">
             <div class= "intro-title">Coding Quiz Challenge</div>
             <div id="intro-text">
@@ -27,6 +30,8 @@
             <button id="start-button" onclick="startQuiz()">Start Quiz</button>
         </section>
 
+        <!--Section showing the quiz content. The content includes the quiz questions, multiple choice options, 
+            and status letting the user know if they selected the correct answer-->
         <section id="quiz">
             <div class="quiz-content">
                 <span id="quiz-question"></span>
@@ -41,6 +46,8 @@
             </div>
         </section>
 
+        <!--Section displaying the users final score and a form that lets the user submit their name and score to
+            the leaderboard-->
         <section id="quiz-results">
             <div class="result-message">
                 <span id="result-title">All done!</span>
@@ -54,6 +61,9 @@
             </form>
         </section>
 
+        <!--Section showing the leaderboards of all the user submitted scores in descending order. The section also
+            includes 2 buttons; one that allows the user to the return to the home page and another that clears
+            all the scores in the leaderboard-->
         <section id="high-scores">
             <div>
                 <span id="leaderboard-title">High Scores</span>
