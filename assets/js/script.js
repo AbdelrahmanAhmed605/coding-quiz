@@ -3,7 +3,7 @@ var quiz_section = document.getElementById("quiz");
 var results_section = document.getElementById("quiz-results");
 var high_score_section = document.getElementById("high-scores");
 
-var totalTime = 10;
+var totalTime = 100;
 var secondsLeft;
 var timer;
 
@@ -135,6 +135,7 @@ function startCountdown(){
 }
 
 function displayQuiz() {
+    high_score_section.setAttribute("style", "display:none;");
     quiz_section.setAttribute("style", "display:flex;");
 
     var current_question = document.getElementById("quiz-question");
@@ -193,7 +194,7 @@ function checkAnswer(event) {
         showResults(secondsLeft);
         document.getElementById("time").innerHTML = secondsLeft;
     } else {
-        setTimeout(displayQuiz, 1000);
+        setTimeout(displayQuiz, 500);
     }
 }
 
