@@ -1,3 +1,4 @@
+/* Variables */
 :root{
     --bg-color: #fff7f3;
     --start-btn: #7a25ca;
@@ -23,9 +24,10 @@
     --scores-text: 1.5em;
 
     --quiz-options-padding: 0.5em 6em 0.5em 0.3em;
-    --btn-padding: 0.2em;
+    --btn-padding: 0.1em;
 }
 
+/* Remove browser defaults */
 *{
     padding: 0;
     margin: 0;
@@ -35,6 +37,8 @@ body{
     background-color: var(--bg-color);
 }
 
+/* Center all sections horizontally. Flex-start is used to shat when some sections are displayed to none, the remaining ones
+are at the top, near the menu section*/
 main{
     display: flex;
     flex-wrap: wrap;
@@ -58,6 +62,7 @@ main{
     color: var(--view-scores-text);
 }
 
+/* Animation that displays when user tries to view the leaderboard */
 #view-scores:hover{
     cursor: pointer;
     transform: scale(1.25);
@@ -105,11 +110,6 @@ main{
     cursor: pointer;
 }
 
-#quiz{
-    align-self: flex-start;
-    width: 100%;
-}
-
 .quiz-content{
     display: flex;
     flex-direction: column;
@@ -125,6 +125,7 @@ main{
     margin-bottom: 0.5em;
 }
 
+/* Places the numbered index of the list items within the border box that is colored*/
 #quiz-options{
     color: var(--quiz-options-text);
     list-style-position: inside;
@@ -142,6 +143,8 @@ main{
     margin: 1em 0;
 }
 
+/* Animation when user hovers over a multiple choice option. This allows the user to better visualize which 
+option they are selecting*/
 #quiz-options li:hover{
     background-color: var(--quiz-options-hover);
     cursor: pointer;
@@ -151,6 +154,11 @@ main{
 #answer-status{
     font-size: var(--quiz-text);
     color: var(--answer-status-text);
+}
+
+#quiz-results{
+    font-size: var(--results-text);
+    margin: 1em;
 }
 
 #result-title{
@@ -163,20 +171,16 @@ main{
 }
 
 .result-message{
-    font-size: var(--results-text);
     margin-bottom: 0.5em;
-}
-
-#quiz-results form label{
-    font-size: var(--results-text);
 }
 
 #quiz-results form input{
     font-size: var(--results-text);
-    height: 1.5em;
 }
 
 #results-submit{
+    font-size: var(--btn-size);
+
     background-color: var(--btn-bg-color);
     color: var(--btn-txt-color);
 
@@ -218,10 +222,13 @@ main{
     margin: 1em 1em 0 0;
 }
 
+/* Animation that lets the user know which button they are hovering */
 #high-scores button:hover{
     cursor: pointer;
 }
 
+/* Initially only displays intro section. Once the user starts the quiz, the other sections display attributes 
+will be altered using javascript*/
 #quiz,#quiz-results,#high-scores{
     display: none
 }
