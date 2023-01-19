@@ -281,6 +281,7 @@ function goBack() {
     clearInterval(timer);
     question_index = 0;
     document.getElementById("time").innerHTML = "";
+    document.getElementById("answer-status").textContent = "";
 
     high_score_section.setAttribute("style", "display:none;");
     intro_section.setAttribute("style", "display:flex;");
